@@ -1,0 +1,64 @@
+<mvc:View controllerName="com.sample.odatasample.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page>
+        <content>
+            <List id="list" items="{productModel>/Categories}" mode="SingleSelect">
+                            <items>
+                                <StandardListItem title="{productModel>ID}" description="{productModel>Name}"></StandardListItem>
+                            </items>
+                        </List>
+                        <VBox>
+                            <Input placeholder="Enter the ID for the category" id="idinput"/>
+                            <Input placeholder="Enter the category name" id="nameinput"/>
+                            <Button text="Create" press="createData"/>
+                            <Button text="Update" press="updateData"/>
+                            <Button text="Delete" press="deleteData"/>
+                            </VBox>
+
+
+            <Table items="{productModel>/Employees}">
+            <columns>
+                <Column >
+                    <Text text="EmployeeID" />
+                </Column>
+                <Column >
+                    <Text text="Employee Name" />
+                </Column>
+                <Column >
+                    <Text text="City" />
+                </Column>
+                <Column >
+                    <Text text="Title" />
+                </Column>
+                <Column >
+                    <Text text="address" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text= "{productModel>EmployeeID}" />
+                         <Text text= "{productModel>FirstName}" />
+                          <Text text= "{productModel>Title}" />
+                           <Text text= "{productModel>City}" />
+                            <Text text= "{productModel>Address}" />
+
+                    </cells>
+                </ColumnListItem>
+            </items>
+            </Table>
+        </content>
+    </Page>
+
+   <!-- <Page
+    title="Page has binding with a single product"
+    binding="{/Products(1)}">
+    <content>
+        <Text
+            text="Product name: {/ProductName}"
+            class="sapUiMediumMargin">
+        </Text>
+    </content>
+</Page>-->
+</mvc:View>
